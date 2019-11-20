@@ -7,4 +7,5 @@ This repository describes data analyses done by me for the manuscript of *Machil
 ===================================================
 
 1) skew.sh 
-2) ...
+2) pairfqs.sh
+3) bbmap.sh & bbmapMT.sh 
