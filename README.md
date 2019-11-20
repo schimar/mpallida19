@@ -6,4 +6,5 @@ This repository describes data analyses done by me for the manuscript of *Machil
 
 ===================================================
 
-
+1) skew.sh 
+2) ...
