@@ -1,23 +1,9 @@
 #! /bin/bash
 
-#PBS -l walltime=240:00:00
-#PBS -l mem=220gb,ncpus=24
-
-#PBS -m e
-#PBS -M schimar@gmail.com
-
-#PBS -N bbforthewin
-
-#PBS -o bbvars85.o
-#PBS -e bbvars85.e 
-
 module load jdk/1.8.0_45
 module load samtools-1.6-gcc-4.8-lcsoxia 
 module load sambamba/0.7.0
 
-WORKDIR='/scratch/uibk/c7701188/mpallida/bbmap/mt/92010/id80/'
-cd $WORKDIR
-bbpth='/home/uibk/c7701188/bio/bbmap/'
 ncpus=24
 
 shopt -s nullglob
@@ -31,7 +17,6 @@ sysconfcpus -n $ncpus "${bbpth}"calctruequality.sh -Xms220g -Xmx220g vcf=bbvars_
 
 for i in *.sorted.bam; do 
 	stm=${i%.sorted.bam}
-	#stm=${instm##*/}
 	echo $stm
 	sysconfcpus -n $ncpus "${bbpth}"bbduk.sh -Xmx220g -Xms220g in=$i out=${stm}.recal.sam 
 done
