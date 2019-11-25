@@ -13,9 +13,7 @@ echo Running on host 'hostname'
 echo Time is 'date'
 echo Directory is 'pwd'
 
-#rsync -avz ~/uibk/talpData/g12/*.fasta .
 
-#~/bio/bwa/bwa index Talp.v1.0.assembly.fasta
 module load java/1.8.0_121
 
 java -Xmx256g -jar ~/bio/GenomeAnalysisTK-3.8-0-ge9d806836/GenomeAnalysisTK.jar -T UnifiedGenotyper -R ref/Mpallida_transcriptome_final.fasta -I markDupbam.list -o mpal17mdup3ploid.vcf -nct 16 -glm SNP -ploidy 3 -maxAltAlleles 3 -stand_call_conf 50 
@@ -24,6 +22,4 @@ java -Xmx256g -jar ~/bio/GenomeAnalysisTK-3.8-0-ge9d806836/GenomeAnalysisTK.jar 
 
 
 
-#java -Xmx1g -jar ~/bio/picard/build/libs/picard.jar CreateSequenceDictionary R=Mpallida_transcriptome_final.fasta O=Mpallida_transcriptome_final.dict
-#java -Xmx1g -jar ~/bio/picard/build/libs/picard.jar SamToFastq -INTER=true I=92360f12.nSorted.bam FASTQ=92360f12il.fq.gz
-##-INTERLEAVE true 
+
